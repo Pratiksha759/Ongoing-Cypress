@@ -1,5 +1,5 @@
 {
-  "name": "cypress_project",
+  "name": "training24_cypress_ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.6.6"
+    "cypress": "^13.6.6",
+    "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.26",
+    "cypress-mochawesome-reporter": "^3.5.1"
   }
 }
