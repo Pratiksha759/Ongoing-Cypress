@@ -12,4 +12,18 @@ describe('Registration Test Suite', function () {
         const invalidUsername = '@#$%^&*';
         cy.get('[name="uuname"]').type(invalidUsername);
     });
+
+    it('Verify rejection of username with spaces',function(){
+        cy.visit("/signup.php");
+        const uname='kara n';
+        cy.get('[name="uuname"]').type(uname);
+    });
+    
+
+    it('Acceptance alphanumeric and special charecters in password field',function(){
+        cy.visit("/signup.php");
+        const validPassword='Password@123';
+        cy.get('[name="upass"]').type(validPassword);
+    });
+
 });
