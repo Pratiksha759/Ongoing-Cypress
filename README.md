@@ -69,7 +69,7 @@ Step 9- Run the file
         -run by npx cypress open(to run on cypress Window)
         -run by npx cypress run(to run on console)
 
-##**Folder Structure:**
+## **Folder Structure:**
 *The e2e :Integration folder includes all the test files. The test files may be written as.js,.jsx,.coffee, and.cjsx.
 Usually the preferred extension is.js, and the test file name format is test-name.spec.js.
 All the test cases will be here.
