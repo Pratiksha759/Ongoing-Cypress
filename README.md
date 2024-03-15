@@ -21,10 +21,10 @@ It includes information on the project's purpose, technologies utilized, challen
 
 GitHub Repository: https://github.com/TestrigTechnologies/training24_Cypress_TS.git
 
-## Folder structure of project:**
+## **Folder structure of project:**
 ![Screenshot (39)](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/0585a1d2-85e4-4136-82cb-cc993cdf1bef)
 
-##**🤖Tech-Stack:**
+## **🤖Tech-Stack:**
  Cypress IDE
  TypeScript
  NodeJs 
@@ -33,10 +33,10 @@ Cypress-mochawesome-reporter
 Cypress Documentation
 Typescript Documentation
 
-##**File Structure:**
+## **File Structure:**
 Set up projects and tests
 
-##**🛠Project Setup**
+## **🛠Project Setup**
 
 1)Install Node-js
 2)Install IDE(Vscode)
@@ -45,7 +45,7 @@ Set up projects and tests
 5)Add typescript extension in Vscode
 6)Add code runner
 
-##**How to Use the Project:**
+## **How to Use the Project:**
 
 Step 1 - Create a new folder 
 Step 2 - Open folder in VS Code 
@@ -104,15 +104,15 @@ package-lock.json: This file is used to lock down the versions of your dependenc
 cypress.config.json: a configuration file for you. This file will be cypress.config.js for JavaScript apps or cypress.config.ts for TypeScript apps. 
 This file is used to store any configuration specific to Cypress.
 
-##**👨‍💻Team Member:**
+## **👨‍💻Team Member:**
 Pratiksha Pathare - pratikshap@testrig.co.in 📧
 
-##**👨‍🏫Team lead**
+## **👨‍🏫Team lead**
 Vaibhav Pawar
 
-##**Contributors**
+## **Contributors**
 Feel free to dive in! Open an issue or submit PRs.
  
 
-##**Licence**
+## **Licence**
 MIT © Richard Littaue
