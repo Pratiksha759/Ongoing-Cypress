@@ -25,13 +25,13 @@ GitHub Repository: https://github.com/TestrigTechnologies/training24_Cypress_TS.
 ![Screenshot (39)](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/0585a1d2-85e4-4136-82cb-cc993cdf1bef)
 
 ## **🤖Tech-Stack:**
- Cypress IDE
- TypeScript
- NodeJs 
- Git and Github
-Cypress-mochawesome-reporter
-Cypress Documentation
-Typescript Documentation
+ 1.Cypress IDE
+ 2.TypeScript
+ 3.NodeJs 
+ 4.Git and Github
+ 5.Cypress-mochawesome-reporter
+ 6.Cypress Documentation
+ 7.Typescript Documentation
 
 ## **File Structure:**
 Set up projects and tests
@@ -70,48 +70,48 @@ Step 9- Run the file
         -run by npx cypress run(to run on console)
 
 ##**Folder Structure:**
-The e2e :Integration folder includes all the test files. The test files may be written as.js,.jsx,.coffee, and.cjsx.
+*The e2e :Integration folder includes all the test files. The test files may be written as.js,.jsx,.coffee, and.cjsx.
 Usually the preferred extension is.js, and the test file name format is test-name.spec.js.
 All the test cases will be here.
 
-Fixture: Fixtures are used to store test data, which can then be used throughout the tests. Usually, the data is stored in JSON format.
+*Fixture: Fixtures are used to store test data, which can then be used throughout the tests. Usually, the data is stored in JSON format.
 This is the folder where all the test data is kept by default (like example.json).
 
-Screenshots and videos (MP4): these folders get created during the execution of tescases.Cypress records a video for each spec file when running tests during a Cypress run.
+*Screenshots and videos (MP4): these folders get created during the execution of tescases.Cypress records a video for each spec file when running tests during a Cypress run.
 Videos are not automatically recorded during cypress open. 
 Videos are stored in the videos folder, which is set to cypress/videos by default.
 
-cypress/downloads: This folder is automatically created when your test downloads any file and stores all the downloaded files. 
+*cypress/downloads: This folder is automatically created when your test downloads any file and stores all the downloaded files. 
 
-Support :This folder contains index.js and commands.js files. This index.js file is run before every single spec file.
+*Support :This folder contains index.js and commands.js files. This index.js file is run before every single spec file.
 The support folder is a great place to put reusable behavior, such as custom commands. 
 
-command.js :use to define custom commands to define specific functionality
+*command.js :use to define custom commands to define specific functionality
 
- e2e.js: reference for component testing
+ *e2e.js: reference for component testing
 
-node_modules : All the libraries and dependencies required for Cypress test execution
+*node_modules : All the libraries and dependencies required for Cypress test execution
 
-jsconfig.json: Added later to enable autocompletion
+*jsconfig.json: Added later to enable autocompletion
 
-package.json: It is similar to pom.xml in Java.
+*package.json: It is similar to pom.xml in Java.
 -dependency management file to specify all the required Cypress dependencies
 
-package-lock.json: This file is used to lock down the versions of your dependencies so             
+*package-lock.json: This file is used to lock down the versions of your dependencies so             
  that your project will always use the same versions.
  regardless of when you install it. 
 
-cypress.config.json: a configuration file for you. This file will be cypress.config.js for JavaScript apps or cypress.config.ts for TypeScript apps. 
+*cypress.config.json: a configuration file for you. This file will be cypress.config.js for JavaScript apps or cypress.config.ts for TypeScript apps. 
 This file is used to store any configuration specific to Cypress.
 
 ## **👨‍💻Team Member:**
-Pratiksha Pathare - pratikshap@testrig.co.in 📧
+-Pratiksha Pathare - pratikshap@testrig.co.in 📧
 
 ## **👨‍🏫Team lead**
-Vaibhav Pawar
+-Vaibhav Pawar
 
 ## **Contributors**
-Feel free to dive in! Open an issue or submit PRs.
+-Feel free to dive in! Open an issue or submit PRs.
  
 
 ## **Licence**
