@@ -3,6 +3,6 @@
 
 declare namespace Cypress {
     interface Chainable {
-      login(visit1: any): void;
+      login(name: string): void;
     }
   }

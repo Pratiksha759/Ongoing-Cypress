@@ -5,6 +5,7 @@ describe('Login Test Suite', function () {
   
     beforeEach(function () {
         cy.visit('/login.php');
+
     });
 
 
@@ -12,7 +13,8 @@ describe('Login Test Suite', function () {
 
        it('Visibility of username placeholder', function () {
          cy.get(obj2.userLogin).should('be.visible')
-         obj2.SignInBtn()    });
+         obj2.SignInBtn()  
+          });
 
     it('Visibility of password placeholder', function () {
         cy.get(obj2.pwdLogin).should('be.visible')
