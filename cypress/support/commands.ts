@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -12,6 +15,10 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+// Cypress.Commands.add('visit1', () => {
+//     cy.get('a[href="https://authenticationtest.com/simpleFormAuth/"]', { timeout: 20000 }).first().click();
+//     return cy.visit('https://authenticationtest.com/simpleFormAuth/');
+// });
 //
 //
 // -- This is a child command --
