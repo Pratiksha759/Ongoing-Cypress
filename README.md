@@ -3,13 +3,13 @@
 Built on Cypress IDE using Typescript
 
 ## **Table of Contents:**
-Project Title
-Project Description
-Table of Contents
-How to Install and Run the Project
-How to Use the Project
-Credits
-License
+1. Project Title
+2. Project Description
+3. Table of Contents
+4. How to Install and Run the Project
+5. How to Use the Project
+6. Credits
+7. License
 ## **📝Description:**
 
 The Cypress Testing Project is a comprehensive testing solution that leverages Cypress for automated testing.
@@ -25,25 +25,25 @@ GitHub Repository: https://github.com/TestrigTechnologies/training24_Cypress_TS.
 ![Screenshot (39)](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/0585a1d2-85e4-4136-82cb-cc993cdf1bef)
 
 ## **🤖Tech-Stack:**
- -Cypress IDE
- -TypeScript
- -NodeJs 
- -Git and Github
- -Cypress-mochawesome-reporter
- -Cypress Documentation
- -Typescript Documentation
+ 1. Cypress IDE
+ 2. TypeScript
+ 3. NodeJs 
+ 4. Git and Github
+ 5. Cypress-mochawesome-reporter
+ 6. Cypress Documentation
+ 7. Typescript Documentation
 
 ## **File Structure:**
 Set up projects and tests
 
 ## **🛠Project Setup**
 
-1)Install Node-js
-2)Install IDE(Vscode)
-3)Create a new folder.
-4)Open the folder in Vscode.
-5)Add typescript extension in Vscode
-6)Add code runner
+1. Install Node-js
+2. Install IDE(Vscode)
+3. Create a new folder.
+4. Open the folder in Vscode.
+5. Add typescript extension in Vscode
+6. Add code runner
 
 ## **How to Use the Project:**
 
