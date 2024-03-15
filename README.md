@@ -25,13 +25,13 @@ GitHub Repository: https://github.com/TestrigTechnologies/training24_Cypress_TS.
 ![Screenshot (39)](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/0585a1d2-85e4-4136-82cb-cc993cdf1bef)
 
 ## **🤖Tech-Stack:**
- 1.Cypress IDE
- 2.TypeScript
- 3.NodeJs 
- 4.Git and Github
- 5.Cypress-mochawesome-reporter
- 6.Cypress Documentation
- 7.Typescript Documentation
+ -Cypress IDE
+ -TypeScript
+ -NodeJs 
+ -Git and Github
+ -Cypress-mochawesome-reporter
+ -Cypress Documentation
+ -Typescript Documentation
 
 ## **File Structure:**
 Set up projects and tests
