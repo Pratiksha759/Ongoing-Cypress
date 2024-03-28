@@ -1,0 +1,21 @@
+#  Template NodeJS buil
+# This template allows you to validate your NodeJS code.
+# The workflow allows running tests and code linting on the default branch.
+
+image: cypress/included
+
+pipelines:
+  default:
+    - step:
+        name: Build and Test
+        caches:
+          - node
+        script:
+          - npm ci
+          - npm install mochawesome 
+          - npx cypress run 
+          
+        artifacts:
+          - cypress/reports/html/index.html
+          - cypress/screenshots/**
+          

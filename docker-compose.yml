@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  cypress:
+    image: cypress/included:11.2.0
+    volumes:
+      - .:/test
+      - mochawesome_reports:/reports
+    working_dir: /test
+    command: sh -c "npm install && npx cypress run"
+    depends_on:
+      - node
+
+  node:
+    image: node:14-alpine
+    volumes:
+      - mochawesome_reports:/reports
+
+volumes:
+  mochawesome_reports:
