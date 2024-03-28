@@ -68,10 +68,10 @@ Step 9- Run the file
         OR
         -run by npx cypress open(to run on cypress Window)
         -run by npx cypress run(to run on console)
-## **Running the project on various platforms used in software development and deployment processes
+## **Running the project on various platforms used in software development and deployment processes**
 Bitbucket, GitHub Actions, AWS, and Docker are all tools and platforms commonly used in software development and deployment processes
 
-## **Bitbucket
+## **Bitbucket**
 
 Bitbucket is a Git-based source code repository hosting service owned by Atlassian. 
 It serves as a platform for developers to store, manage, and collaborate on their code,
@@ -96,7 +96,71 @@ Running the Project:
         -run by npx cypress run(to run on console)
 
 4. mochoawesome report get genrated dynamically in cypress/reports/html .can be viewd using live server
-5. pushing back the updated code to bitbucket repository 
+5. pushing back the updated code to bitbucket repository
+
+## **AWS**
+AWS CodeCommit:allows you to securely store and manage your Git repositories in the cloud.
+AWS CodeBuild:AWS CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy. 
+
+**Prerequisites**
+1.Cypres  installation along with Typescript and mochoawesome report
+2.AWS account with access to CodeCommit and CodeBuild
+3.AWS CLI installed on the local machine
+4.IAM user with appropriate permissions for CodeCommit and CodeBuild
+
+**Getting Started on local machine** 
+1. clone the CodeCommit repository to the local machine using AWS CLI:
+2. Configure AWS CLI with credentials using aws configure.
+3. Clone the CodeCommit repository using git clone <CodeCommit repository URL>.
+
+**Running the Project:**
+- commands or steps needed to run the project locally:
+       - Run the file
+        -run by npx cypress open(to run on cypress Window)
+        -run by npx cypress run(to run on console)
+
+-pushing back the updated code to CodeCommit repository 
+
+## **Additional Information**
+Building the Project with AWS CodeBuild
+Detail the process of building the project using AWS CodeBuild:
+Set up a buildspec.yml file in the project root to define the build steps.
+
+## **Docker**
+Docker platform can be used to automates the deployment of above project in lightweight portable containers, ensuring consistency across different environments.
+## Prerequisites
+- Docker installed on your machine.
+- Cypress ,Typesript,mochoawesome installed
+- Docker extension added in Vs code
+
+## Getting Started
+1. Clone the repository to your local machine.
+2. Build the Docker image:
+   ```bash
+   docker build -t project-name .
+
+3.Run the Docker container:
+   bash
+docker run -d -p 8080:80 project-name
+
+Access the project in your browser at http://localhost:8080.
+
+## Working flow:
+-create a DockerFile: a text file that contains all commands, in order, needed to build a given image.
+-build image 
+-create a docker container
+-Run the testcases via docker-compose.yml file 
+
+## **GithubActions**
+
+1. Clone the repository to your local machine.
+2. Cypres  installation along with Typescript and mochoawesome report
+3. Git installed
+4. In your repository, create the .github/workflows/ directory to store your workflow files.
+5. In the .github/workflows/ directory, create a new file called learn-github-actions.yml and add
+6. add code locally using cypress commands
+7. Push back code to github workflow. as Each workflow is stored as a separate YAML file .workflow will be triggered
+8. view result of test execution along with reports
 
 ## **Folder Structure:**
 *The e2e :Integration folder includes all the test files. The test files may be written as.js,.jsx,.coffee, and.cjsx.
