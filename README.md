@@ -162,6 +162,18 @@ Access the project in your browser at http://localhost:8080.
 7. Push back code to github workflow. as Each workflow is stored as a separate YAML file .workflow will be triggered
 8. view result of test execution along with reports
 
+## **API Testing:**
+Cypress is a standalone frontend testing tool, it makes HTTP requests on behalf of the web applications as it is executing. While it might appear that Cypress is making these requests from the browser, it actually uses Node.js as an engine to make the HTTP requests to the API server. It uses Node.js to return the responses received from the server.
+To make an API request, Cypress automation provides an inbuilt command called cy.request(). 
+
+**API Methods**
+GET, POST, PUT, and DELETE are the four most common HTTP methods used in REST APIs. They correspond to the CRUD (create, read, update, delete) operations on resources.
+In our project cypress/e2e/ApiTesing contain test files for API tesing Which includes following  Methods 
+
+GET: Used to retrieve data or read a resource from the server.
+POST: Used to create a new resource on the server.
+PUT: The PUT method is used to update or replace an existing resource on the server
+DELETE: The DELETE method is used to delete a specified resource on the server.
 ## **Folder Structure:**
 *The e2e :Integration folder includes all the test files. The test files may be written as.js,.jsx,.coffee, and.cjsx.
 Usually the preferred extension is.js, and the test file name format is test-name.spec.js.
@@ -182,7 +194,8 @@ The support folder is a great place to put reusable behavior, such as custom com
 *command.ts :use to define custom commands to define specific functionality
 
  *e2e.ts: reference for component testing
-
+ 
+*PageObjects:
 *node_modules : All the libraries and dependencies required for Cypress test execution
 
 *tsconfig.json: Added later to enable autocompletion
