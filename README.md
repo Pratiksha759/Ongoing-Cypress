@@ -22,7 +22,7 @@ It includes information on the project's purpose, technologies utilized, challen
 GitHub Repository: https://github.com/TestrigTechnologies/training24_Cypress_TS.git
 
 ## **Folder structure of project:**
-![Screenshot (39)](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/0585a1d2-85e4-4136-82cb-cc993cdf1bef)
+![image](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/caeacee5-7dfa-463b-9163-e4a411ad3c62)
 
 ## **🤖Tech-Stack:**
  1. Cypress IDE
@@ -195,7 +195,8 @@ The support folder is a great place to put reusable behavior, such as custom com
 
  *e2e.ts: reference for component testing
  
-*PageObjects:
+*PageObjects:organizing page classes with relevant functions and locators, the Cypress Page Object Model enhances code reusability and maintainability
+
 *node_modules : All the libraries and dependencies required for Cypress test execution
 
 *tsconfig.json: Added later to enable autocompletion
