@@ -1,4 +1,4 @@
-export class Authentication_Action {
+export class authenticationPage {
     authEmail = '[name="email"]';
     authPwd = '[name="password"]';
     ddown = '[name="selectLogin"]';

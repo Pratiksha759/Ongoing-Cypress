@@ -1,4 +1,4 @@
-export class Registration_Elements{
+export class registrationPage{
 
     user1='[name="uuname"]'
     pwd1='[name="upass"]'

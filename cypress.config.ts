@@ -10,11 +10,9 @@ export default defineConfig({
     saveAllAttempts: false,
   },
   e2e: {
-   
     setupNodeEvents(on, config) {
       // implement node event listeners here
-      require('cypress-mochawesome-reporter/plugin')(on)
-      
+      require('cypress-mochawesome-reporter/plugin')(on);
     },
     baseUrl: "http://testphp.vulnweb.com", 
   },

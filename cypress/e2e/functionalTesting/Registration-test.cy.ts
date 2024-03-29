@@ -1,8 +1,9 @@
 import { types } from "util";
-import { Registration_Elements } from "../../PageObjects/PageElement/Registration_Actions";
+import { registrationPage } from "../../../PageObjects/registrationPage";
 
+                                    
 ///<reference types= "Cypress" />
-const obj=new Registration_Elements
+const obj=new registrationPage
 
 describe('Registration Test Suite', function () {
   
@@ -13,28 +14,19 @@ describe('Registration Test Suite', function () {
     this.afterEach(function () {
         obj.SignUPbtn();
         cy.visit("http://testphp.vulnweb.com/secured/newuser.php");
-       // cy.url().should('contain', 'http://testphp.vulnweb.com/secured/newuser.php')
-        
     });
       
     it('Visibility of username placeholder', function () {
-        // obj.Username('karan');
-         cy.get(obj.user1).should('be.visible')
-        
-        // cy.visit("http://testphp.vulnweb.com/secured/newuser.php");
-         
+       cy.get(obj.user1).should('be.visible')  
     });
 
      it('Username field is editable', function () {
-       
-        cy.get(obj.user1).should("be.enabled") 
+       cy.get(obj.user1).should("be.enabled") 
     });
 
  
     it('Acceptance of valid text in username input field', function () {
-       
-        obj.Username('example@123');
-       
+       obj.Username('example@123');
        });
 
 
@@ -155,15 +147,13 @@ describe('Registration Test Suite', function () {
         obj.Email('user123@example.com');
         obj.PhoneNumber('1234567890');
         obj.Address('123, Example St');
-      //  cy.get('[name="signup"]').click();
-       // cy.url().should('eq','http://testphp.vulnweb.com/secured/newuser.php');
+    
     });
  
     it('Verify error handling for incomplete registration', function () {
        
         obj.Username('user123');
         obj.Password('Pass@123');
-       
        
     });
  
@@ -187,8 +177,6 @@ describe('Registration Test Suite', function () {
         obj.Email('user123@example.com');
         obj.PhoneNumber('1234567890');
         obj.Address('123, Example St');
-      //  cy.get('[name="signup"]').click();
-       // cy.url().should('eq','http://testphp.vulnweb.com/secured/newuser.php');
       
     });
 });

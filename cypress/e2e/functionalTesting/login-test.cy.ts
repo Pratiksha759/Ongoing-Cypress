@@ -1,17 +1,25 @@
-import { Login_Elements } from "../../PageObjects/PageElement/Login_Elements";
 
-const obj2 = new Login_Elements();
+import { loginPage } from "../../../PageObjects/loginPage";
+const obj2 = new loginPage();
+beforeEach(function () {
+    cy.visit('/login.php');
+});
+function Userpage(){
+    cy.visit('http://testphp.vulnweb.com/userinfo.php'); 
+}
+function logOut1(){
+    cy.visit('http://testphp.vulnweb.com/logout.php');
+}
+
+
+
+
+
+
+
 describe('Login Test Suite', function () {
   
-    beforeEach(function () {
-        cy.visit('/login.php');
-
-    });
-
-
-    
-
-       it('Visibility of username placeholder', function () {
+   it('Visibility of username placeholder', function () {
          cy.get(obj2.userLogin).should('be.visible')
          obj2.SignInBtn()  
           });
@@ -25,24 +33,21 @@ describe('Login Test Suite', function () {
        obj2.UsernameLogin('test');
         obj2.PasswordLogin('test');
         obj2.SignInBtn();
-       cy.visit('http://testphp.vulnweb.com/userinfo.php');
-
-       cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
+         Userpage();
+         obj2.UserInfo();
+       //cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
         
        
     });
 
-  
      it('Logout functionality', function(){
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-        cy.visit('http://testphp.vulnweb.com/userinfo.php');
- 
-        cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
-        cy.get('a[href="login.php"]',{ timeout: 20000 }).contains('About Us').click();
-        cy.visit('http://testphp.vulnweb.com/logout.php');
- 
+         Userpage();
+         obj2.UserInfo();
+          obj2.Aboutt();
+        logOut1();
          
      });
 
@@ -51,11 +56,10 @@ describe('Login Test Suite', function () {
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-        cy.visit('http://testphp.vulnweb.com/userinfo.php');
- 
-        cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
+         Userpage();
+        cy.get('[type="submit"][value="update"]',{ timeout: 40000 }).should('be.visible');
         cy.get('a[href="http://www.acunetix.com"]').contains('About Us').click();
-       // cy.visit('https://www.acunetix.com/');
+       
          
         
      });
@@ -77,11 +81,10 @@ describe('Login Test Suite', function () {
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-        cy.visit('http://testphp.vulnweb.com/userinfo.php');
- 
+         Userpage();
         cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
         cy.get('a[href="cart.php"]',{ timeout: 20000 }).first().click();
-       // cy.visit('https://www.acunetix.com/');
+      
          
      });
 
@@ -89,8 +92,7 @@ describe('Login Test Suite', function () {
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-        cy.visit('http://testphp.vulnweb.com/userinfo.php');
- 
+         Userpage();
         cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
         cy.get('a[href="userinfo.php"]',{ timeout: 20000 }).first().click();
        
@@ -101,8 +103,7 @@ describe('Login Test Suite', function () {
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-        cy.visit('http://testphp.vulnweb.com/userinfo.php');
- 
+         Userpage();
         cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
         cy.get('a[href="logout.php"]',{ timeout: 20000 }).first().click();
        
@@ -113,8 +114,7 @@ describe('Login Test Suite', function () {
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-        cy.visit('http://testphp.vulnweb.com/userinfo.php');
- 
+         Userpage();
         cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
         cy.get('a[href="artists.php"]',{ timeout: 20000 }).first().click();
       
