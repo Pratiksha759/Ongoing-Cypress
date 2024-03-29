@@ -22,7 +22,7 @@ It includes information on the project's purpose, technologies utilized, challen
 GitHub Repository: https://github.com/TestrigTechnologies/training24_Cypress_TS.git
 
 ## **Folder structure of project:**
-![image](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/caeacee5-7dfa-463b-9163-e4a411ad3c62)
+![Folder structure 1](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/6f301f7f-fb27-4d8e-b1fc-5a094da658df)
 
 ## **🤖Tech-Stack:**
  1. Cypress IDE
