@@ -167,13 +167,11 @@ Cypress is a standalone frontend testing tool, it makes HTTP requests on behalf 
 To make an API request, Cypress automation provides an inbuilt command called cy.request(). 
 
 **API Methods**
-GET, POST, PUT, and DELETE are the four most common HTTP methods used in REST APIs. They correspond to the CRUD (create, read, update, delete) operations on resources.
-In our project cypress/e2e/ApiTesing contain test files for API tesing Which includes following  Methods 
+1GET, POST, PUT, and DELETE are the four most common HTTP methods used in REST APIs. They correspond to the CRUD (create, read, update, delete) operations on resources.
+In our project cypress/e2e/ApiTesing contain test files for API tesing using Reqres 
+Reqres is a hosted REST API that is designed to simulate real-world application scenarios.
+It provides a platform where developers can test various functionalities, such as user authentication systems, by responding to requests like login and register with predefined responses. Reqres offers features like providing fake data, supporting common HTTP methods like GET, POST, PUT, and DELETE
 
-GET: Used to retrieve data or read a resource from the server.
-POST: Used to create a new resource on the server.
-PUT: The PUT method is used to update or replace an existing resource on the server
-DELETE: The DELETE method is used to delete a specified resource on the server.
 ## **Folder Structure:**
 *The e2e :Integration folder includes all the test files. The test files may be written as.js,.jsx,.coffee, and.cjsx.
 Usually the preferred extension is.js, and the test file name format is test-name.spec.js.
