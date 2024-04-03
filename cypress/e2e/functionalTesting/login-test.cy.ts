@@ -4,17 +4,6 @@ const obj2 = new loginPage();
 beforeEach(function () {
     cy.visit('/login.php');
 });
-function Userpage(){
-    cy.visit('http://testphp.vulnweb.com/userinfo.php'); 
-}
-function logOut1(){
-    cy.visit('http://testphp.vulnweb.com/logout.php');
-}
-
-
-
-
-
 
 
 describe('Login Test Suite', function () {
@@ -33,10 +22,8 @@ describe('Login Test Suite', function () {
        obj2.UsernameLogin('test');
         obj2.PasswordLogin('test');
         obj2.SignInBtn();
-         Userpage();
+         obj2.Userpage();
          obj2.UserInfo();
-       //cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
-        
        
     });
 
@@ -44,10 +31,10 @@ describe('Login Test Suite', function () {
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-         Userpage();
+         obj2.Userpage();
          obj2.UserInfo();
           obj2.Aboutt();
-        logOut1();
+        obj2.logOut1();
          
      });
 
@@ -56,18 +43,11 @@ describe('Login Test Suite', function () {
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-         Userpage();
-        cy.get('[type="submit"][value="update"]',{ timeout: 40000 }).should('be.visible');
-        cy.get('a[href="http://www.acunetix.com"]').contains('About Us').click();
-       
-         
-        
+         obj2.Userpage();
+         obj2.UserInfo();
+         obj2.Aboutt();
      });
 
-    
-
-   
-     
     it('should display an error message for invalid username', function(){
       
         obj2.UsernameLogin('invalid');
@@ -75,37 +55,31 @@ describe('Login Test Suite', function () {
         obj2.SignInBtn();
     });
     
-
-    
-    it('After navigating to userinfo page navigate to Cart', function(){
+it('After navigating to userinfo page navigate to Cart', function(){
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-         Userpage();
-        cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
-        cy.get('a[href="cart.php"]',{ timeout: 20000 }).first().click();
-      
-         
+         obj2.Userpage();
+        obj2.UserInfo();
+         obj2.ClickCart();  
      });
 
       it('After Login navigate to Update Profile', function(){
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-         Userpage();
-        cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
-        cy.get('a[href="userinfo.php"]',{ timeout: 20000 }).first().click();
-       
-         
+         obj2.Userpage();
+         obj2.UserInfo();
+         obj2.Aboutt();
      });
 
      it('After Login navigate to Home page', function(){
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-         Userpage();
-        cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
-        cy.get('a[href="logout.php"]',{ timeout: 20000 }).first().click();
+         obj2.Userpage();
+         obj2.UserInfo();
+         obj2.Logout();
        
          
      });
@@ -114,12 +88,10 @@ describe('Login Test Suite', function () {
         obj2.UsernameLogin('test');
          obj2.PasswordLogin('test');
          obj2.SignInBtn();
-         Userpage();
-        cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
-        cy.get('a[href="artists.php"]',{ timeout: 20000 }).first().click();
-      
-         
-     });
+        obj2. Userpage();
+         obj2.UserInfo();
+         obj2.ArtistInfo();
+       });
 
     it('should display an error message for empty username', function(){
     

@@ -2,6 +2,13 @@ export class loginPage {
     userLogin = '[name="uname"]';
     pwdLogin = '[name="pass"]';
 
+    Userpage(){
+        cy.visit('http://testphp.vulnweb.com/userinfo.php'); 
+    }
+
+    logOut1(){
+        cy.visit('http://testphp.vulnweb.com/logout.php');
+    }
 
     UsernameLogin(uname: any) {
         cy.get(this.userLogin).type(uname);
@@ -16,11 +23,23 @@ export class loginPage {
     }
     
     UserInfo(){
-        cy.get('[type="submit"][value="update"]',{ timeout: 20000 }).should('be.visible');
+        cy.get('[type="submit"][value="update"]',{ timeout: 40000 }).should('be.visible');
     }
 
     Aboutt(){
         cy.get('a[href="login.php"]',{ timeout: 40000 }).contains('About Us').click();
     }
    
+    ClickCart(){
+        cy.get('a[href="cart.php"]',{ timeout: 20000 }).first().click();
+      
+    }
+
+    Logout(){
+        cy.get('a[href="logout.php"]',{ timeout: 20000 }).first().click();
+    }
+
+    ArtistInfo(){
+        cy.get('a[href="artists.php"]',{ timeout: 20000 }).first().click();
+    }
 }

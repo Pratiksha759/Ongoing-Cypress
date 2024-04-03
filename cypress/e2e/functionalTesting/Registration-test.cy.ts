@@ -4,16 +4,17 @@ import { registrationPage } from "../../../PageObjects/registrationPage";
                                     
 ///<reference types= "Cypress" />
 const obj=new registrationPage
+beforeEach(function () {
+    cy.visit('/signup.php');
+});
 
+
+  
 describe('Registration Test Suite', function () {
   
-    beforeEach(function () {
-        cy.visit('/signup.php');
-    });
-      
     this.afterEach(function () {
         obj.SignUPbtn();
-        cy.visit("http://testphp.vulnweb.com/secured/newuser.php");
+        obj.NewUser();
     });
       
     it('Visibility of username placeholder', function () {
@@ -181,7 +182,7 @@ describe('Registration Test Suite', function () {
     });
 });
 
-describe('Registration Test Suite2', function () {
+describe('Registration Test Suite 2', function () {
     
     it('Verify successful user registration', function () {
        
@@ -192,7 +193,7 @@ describe('Registration Test Suite2', function () {
         obj.PhoneNumber('1234567890');
         obj.Address('123, Example St');
          cy.get('[name="signup"]').click();
-        cy.url().should('eq','http://testphp.vulnweb.com/secured/newuser.php');
+        cy.url().should('eq',obj.newUser);
         cy.get('#content > p:nth-child(3) > a').click();
     });
  

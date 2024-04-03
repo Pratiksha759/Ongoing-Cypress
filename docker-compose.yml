@@ -7,7 +7,9 @@ services:
       - .:/test
       - mochawesome_reports:/reports
     working_dir: /test
-    command: sh -c "npm install && npx cypress run"
+    command: sh -c "npm install && npx cypress run "
+    environment:
+      - CYPRESS_VISUAL_REGRESSION=true
     depends_on:
       - node
 

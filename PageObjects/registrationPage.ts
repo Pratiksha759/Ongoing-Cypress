@@ -8,6 +8,8 @@ export class registrationPage{
     mail1='[name="uemail"]'
     phone1='[name="uphone"]'
     adds1='[name="uaddress"]'
+    content='#content'
+    newUser='http://testphp.vulnweb.com/secured/newuser.php'
 
    Username(unamee:string){
         cy.get(this.user1).type(unamee);
@@ -45,4 +47,9 @@ export class registrationPage{
     cy.get('[name="signup"]').click;
    }
 
+   NewUser(){
+    cy.visit("http://testphp.vulnweb.com/secured/newuser.php");
+   }
+  
+ 
 }
