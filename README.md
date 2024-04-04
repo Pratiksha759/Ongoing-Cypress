@@ -103,10 +103,10 @@ AWS CodeCommit:allows you to securely store and manage your Git repositories in 
 AWS CodeBuild:AWS CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy. 
 
 **Prerequisites**
-1.Cypres  installation along with Typescript and mochoawesome report
-2.AWS account with access to CodeCommit and CodeBuild
-3.AWS CLI installed on the local machine
-4.IAM user with appropriate permissions for CodeCommit and CodeBuild
+1. Cypres  installation along with Typescript and mochoawesome report
+2. AWS account with access to CodeCommit and CodeBuild
+3. AWS CLI installed on the local machine
+4. IAM user with appropriate permissions for CodeCommit and CodeBuild
 
 **Getting Started on local machine** 
 1. clone the CodeCommit repository to the local machine using AWS CLI:
@@ -140,8 +140,8 @@ Docker platform can be used to automates the deployment of above project in ligh
    docker build -t project-name .
 
 3.Run the Docker container:
-   bash
-docker run -d -p 8080:80 project-name
+   
+docker run -d -p 8080:80 project-name .
 
 Access the project in your browser at http://localhost:8080.
 
@@ -167,11 +167,40 @@ Cypress is a standalone frontend testing tool, it makes HTTP requests on behalf 
 To make an API request, Cypress automation provides an inbuilt command called cy.request(). 
 
 **API Methods**
--GET, POST, PUT, and DELETE are the four most common HTTP methods used in REST APIs. They correspond to the CRUD (create, read, update, delete) operations on resources.
+- GET, POST, PUT, and DELETE are the four most common HTTP methods used in REST APIs. They correspond to the CRUD (create, read, update, delete) operations on resources.
 
--In our project cypress/e2e/ApiTesing contain test files for API tesing using Reqres 
--Reqres is a hosted REST API that is designed to simulate real-world application scenarios.
--It provides a platform where developers can test various functionalities, such as user authentication systems, by responding to requests like login and register with predefined responses. --Reqres offers features like providing fake data, supporting common HTTP methods like GET, POST, PUT, and DELETE
+- In our project cypress/e2e/ApiTesing contain test files for API tesing using Reqres 
+- Reqres is a hosted REST API that is designed to simulate real-world application scenarios.
+- It provides a platform where developers can test various functionalities, such as user authentication systems, by responding to requests like login and register with predefined responses. --Reqres offers features like providing fake data, supporting common HTTP methods like GET, POST, PUT, and DELETE
+## **Visual Testing:**
+- Visual Testing, also known as Visual regression Testing, validates that the visual appearance of an application matches the expected design.
+- It is all about checking the application beyond functional aspects. Some of the attributes that are validated as a part of Visual Testing are-
+- Cypress provides several plugins for visual regression testing, which can help you ensure that your application's UI remains visually consistent across different test runs. 
+- These plugins typically involve configuring the directories where the base snapshots and diff snapshots will be stored and may provide a GUI to help you review and manage the snapshots and diffs.
+- this repository includes Visual testing in cypress using cypress-visual-regression plugin
+1. Installation:
+npm install cypress-visual-regression
+
+2. Configure the visual regression plugin and environment variables in your cypress.config.ts file
+3.  cypress/support/e2e.ts:
+  
+import { addCompareSnapshotCommand } from 'cypress-visual-regression/dist/command'
+addCompareSnapshotCommand()
+
+4.  cypress/tsconfig.json
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "types": [
+      "cypress",
+      "cypress-visual-regression"
+    ]
+  }
+}
+5. Run tests :npx cypress run
+6. Working:
+When running your tests, the visual regression plugin will automatically compare the current snapshot of the UI with the base snapshot
+and generate a diff image if there are any differences. You can then review the diff images and approve or reject them to update the base snapshots.
 
 ## **Folder Structure:**
 *The e2e :Integration folder includes all the test files. The test files may be written as.js,.jsx,.coffee, and.cjsx.
