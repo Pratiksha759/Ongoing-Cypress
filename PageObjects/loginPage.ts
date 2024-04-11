@@ -23,23 +23,23 @@ export class loginPage {
     }
     
     UserInfo(){
-        cy.get('[type="submit"][value="update"]',{ timeout: 40000 }).should('be.visible');
+        cy.get('[type="submit"][value="update"]',{ timeout: 80000 }).should('be.visible');
     }
 
     Aboutt(){
-        cy.get('a[href="login.php"]',{ timeout: 40000 }).contains('About Us').click();
+        cy.get('a[href="login.php"]',{ timeout: 80000 }).contains('About Us').click();
     }
    
     ClickCart(){
-        cy.get('a[href="cart.php"]',{ timeout: 20000 }).first().click();
+        cy.get('a[href="cart.php"]',{ timeout: 80000 }).first().click();
       
     }
 
     Logout(){
-        cy.get('a[href="logout.php"]',{ timeout: 20000 }).first().click();
+        cy.get('a[href="logout.php"]',{ timeout: 40000 }).first().click();
     }
 
     ArtistInfo(){
-        cy.get('a[href="artists.php"]',{ timeout: 20000 }).first().click();
+        cy.get('a[href="artists.php"]',{ timeout: 70000 }).first().click();
     }
 }

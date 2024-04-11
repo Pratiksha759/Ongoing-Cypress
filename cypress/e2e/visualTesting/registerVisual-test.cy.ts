@@ -4,7 +4,8 @@ addCompareSnapshotCommand()
 
 const obj = new registrationPage();
 beforeEach(function () {
-  cy.visit('/signup.php');
+ cy.visit('/signup.php');
+  //cy.visit(`${Cypress.env('testenv')}testphp.vulnweb.com/signup.php`);
 });
 
 
@@ -25,7 +26,7 @@ describe('Visual Registration Test Suite', function () {
   });
 
   it('Acceptance of an address with special characters', function () {
-    obj.Address('123, Example St, !@#$%^&*');
+    obj.Address('123, , !@#$%^&*');
     cy.get(obj.adds1).should('have.value', '123, Example St, !@#$%^&*');
  cy.get(obj.adds1).compareSnapshot('address-field-special-chars');
   });

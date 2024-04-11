@@ -2,7 +2,10 @@
 import { loginPage } from "../../../PageObjects/loginPage";
 const obj2 = new loginPage();
 beforeEach(function () {
-    cy.visit('/login.php');
+   cy.visit('/login.php');
+   // cy.visit(`${Cypress.env('testenv')}testphp.vulnweb.com/login.php`);
+
+    
 });
 
 

@@ -1,4 +1,4 @@
-import { method } from "cypress/types/bluebird";
+//import { method } from "cypress/types/bluebird";
 /// <reference types="cypress" />
 
 

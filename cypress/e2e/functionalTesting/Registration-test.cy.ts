@@ -1,4 +1,4 @@
-import { types } from "util";
+//import { types } from "util";
 import { registrationPage } from "../../../PageObjects/registrationPage";
 
                                     
@@ -6,6 +6,7 @@ import { registrationPage } from "../../../PageObjects/registrationPage";
 const obj=new registrationPage
 beforeEach(function () {
     cy.visit('/signup.php');
+    //cy.visit(`${Cypress.env('testenv')}testphp.vulnweb.com/signup.php`);
 });
 
 
