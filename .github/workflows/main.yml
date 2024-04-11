@@ -20,7 +20,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install cypress-visual-regression --save-dev
-
+      
+      - name: Install MysQL 
+        run: npm i mysql -D             
+        
       - name: Cypress run with Visual Regression
         run: npx cypress run --env visual_regression=true
 
