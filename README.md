@@ -22,7 +22,9 @@ It includes information on the project's purpose, technologies utilized, challen
 GitHub Repository: https://github.com/TestrigTechnologies/training24_Cypress_TS.git
 
 ## **Folder structure of project:**
-![Folder structure 1](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/6f301f7f-fb27-4d8e-b1fc-5a094da658df)
+
+![fs](https://github.com/TestrigTechnologies/training24_Cypress_TS/assets/97455483/062b11f7-7a38-4996-9aeb-274a2aa09ccd)
+
 
 ## **🤖Tech-Stack:**
  1. Cypress IDE
@@ -202,6 +204,28 @@ addCompareSnapshotCommand()
 When running your tests, the visual regression plugin will automatically compare the current snapshot of the UI with the base snapshot
 and generate a diff image if there are any differences. You can then review the diff images and approve or reject them to update the base snapshots.
 
+## **Database Testing:**
+* Ensure that data store in database is accurate and consistent
+* Set up a test Database
+* Connect to database
+* Write tests to interct with the database
+* Run the tests using Cypress test Runner
+
+* Setting up Cypress for Database Testing:
+  
+1. Installation 
+ installing mysql plugin 
+2. Connect database by updating Cypress.config.ts file
+ add credentials under env object in cypress.config.ts file 
+Create custom task to execute mysql query in cypress along with a function to execute
+  mysql queries in cypress test using mysql package and return result as a promise
+
+* Database Test Suite includes:
+  1. Schema testing
+  2. Database tables & column testing
+  3. Keys and Indexes Testing
+  4. Stored procedures Testing
+  5. Triggers Testing
 ## **Folder Structure:**
 *The e2e :Integration folder includes all the test files. The test files may be written as.js,.jsx,.coffee, and.cjsx.
 Usually the preferred extension is.js, and the test file name format is test-name.spec.js.
