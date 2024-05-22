@@ -1,7 +1,7 @@
 {
   "name": "training24_cypress_ts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Webpage Automation Testing\r Built on Cypress IDE using Typescript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.6.6",
+    "cypress": "^13.9.0",
     "cypress-visual-regression": "^5.0.0"
   },
   "devDependencies": {
@@ -20,6 +20,8 @@
     "@cypress/webpack-dev-server": "^3.7.4",
     "@types/mysql": "^2.15.26",
     "@types/node": "^20.11.26",
+    "allure-commandline": "^2.29.0",
+    "allure-cypress": "^2.15.1",
     "babel-loader": "^9.1.3",
     "cypress-mochawesome-reporter": "^3.8.2",
     "mysql": "^2.18.1",

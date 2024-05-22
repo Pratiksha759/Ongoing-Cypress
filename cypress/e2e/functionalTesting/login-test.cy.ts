@@ -1,5 +1,6 @@
 
 import { loginPage } from "../../../PageObjects/loginPage";
+import "allure-cypress/commands";
 const obj2 = new loginPage();
 beforeEach(function () {
    cy.visit('/login.php');

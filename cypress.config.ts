@@ -2,9 +2,13 @@ import { defineConfig } from "cypress";
 import mysql from 'mysql';
 import { configureVisualRegression } from 'cypress-visual-regression/dist/plugin';
 import webpackConfig from './webpack.config';
+const { allureCypress } = require("allure-cypress/reporter");
 
 export default defineConfig({
+  
   reporter: 'cypress-mochawesome-reporter',
+ 
+  video:true,
   reporterOptions: {
     charts: true,
     reportPageTitle: 'custom-title',
@@ -26,18 +30,21 @@ export default defineConfig({
       updateSnapshots: true,
 
       db: {
-        "server": 'localhost',
+        server: 'localhost',
         user: "root",
         password: "MySQL@123",
-        database: "sql_hr"
+        database: "sql_hr",
+        port:3306
       }
       
     },
     screenshotsFolder: './cypress/snapshots/actual',
     setupNodeEvents(on, config) {
       configureVisualRegression(on);
+      allureCypress(on);
       require('cypress-mochawesome-reporter/plugin')(on);
       const { startDevServer } = require('@cypress/webpack-dev-server');
+     
 
       on('dev-server:start', (options) =>
         startDevServer({ options, webpackConfig })
