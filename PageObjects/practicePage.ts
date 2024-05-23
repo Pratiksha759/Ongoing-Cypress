@@ -1,6 +1,7 @@
 
 export class practicePage {
-    demoUrl: string = "https://demo.automationtesting.in/Index.html";
+    demoUrl= "https://demo.automationtesting.in/Index.html";
+    iframeUrl="https://qavbox.github.io/demo/iframes/";
     sec1= "#ui-id-1";
     email='#email';
     go="#enterimg"

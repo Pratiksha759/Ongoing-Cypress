@@ -6,3 +6,5 @@ declare namespace Cypress {
       login(name: string): void;
     }
   }
+
+  import './commands';

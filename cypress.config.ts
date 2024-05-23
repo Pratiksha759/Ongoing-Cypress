@@ -3,11 +3,11 @@ import mysql from 'mysql';
 import { configureVisualRegression } from 'cypress-visual-regression/dist/plugin';
 import webpackConfig from './webpack.config';
 const { allureCypress } = require("allure-cypress/reporter");
-
+/// <reference types="@shelex/cypress-allure-plugin" />
 export default defineConfig({
   
   reporter: 'cypress-mochawesome-reporter',
- 
+  experimentalWebKitSupport: true ,
   video:true,
   reporterOptions: {
     charts: true,
