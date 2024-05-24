@@ -1,6 +1,7 @@
 /// 
 
 import 'cypress-file-upload';
+import { any } from 'cypress/types/bluebird';
 
 // ***********************************************
 // This example commands.ts shows you how to
@@ -12,6 +13,32 @@ import 'cypress-file-upload';
 // https://on.cypress.io/custom-commands
 // ***********************************************
 //
+
+Cypress.Commands.add("interactWithIframe", (iframeSelector:any, action) => {
+    cy.get(iframeSelector).then(($iframeElement) => {
+      let ibody = $iframeElement.contents().find('body');
+      action(ibody);
+    });
+  });
+  
+
+  /// <reference types="cypress" />
+
+
+
+/// <reference types="cypress" />
+
+declare global{namespace Cypress {
+  interface Chainable<Subject = any> {
+    interactWithIframe(iframeSelector: any, action: (ibody: JQuery<HTMLElement>) => void): Chainable<Subject>;
+  }
+}
+}
+
+  
+  
+  
+  
 
 //
 // -- This is a parent command --
