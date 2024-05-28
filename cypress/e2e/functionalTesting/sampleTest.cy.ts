@@ -10,6 +10,12 @@ import usersData from "../../fixtures/example.json";
 ///<reference types= "Cypress" />
 const demoObj = new practicePage();
 
+
+beforeEach(() => {
+  cy.hideCommandLog();
+});
+
+
 describe("Practice Test Suite", function () {
   it("Handling fixtures in cypress", function () {
     demoObj.visitSite(demoObj.demoUrl);
@@ -115,16 +121,65 @@ describe("Practice Test Suite", function () {
   });
 
 
-  it.only("Multiple file uploads",function(){
+  it("Multiple file uploads",function(){
     demoObj.visitSite(demoObj.fileUrl);
     cy.get(demoObj.multiUploads).attachFile(["shelf-desktop.jpg", "example.json"]);
     cy.get(demoObj.multiFileArea).should('have.text',"Files You Selected:")
   })
 
-  it.only("File Upload in Shadow Dom",function(){
+  it("File Upload in Shadow Dom",function(){
     demoObj.visitSite(demoObj.shadowDomUrl);
     cy.get(demoObj.shadowFileInput,{includeShadowDom:true}).attachFile(["shelf-desktop.jpg", "example.json"]);
     cy.get(demoObj.shadowFileAra,{includeShadowDom:true}).should('be.visible')
 
-  })
+  });
+
+  it("Handling dropdown in cypress",function(){
+    demoObj.visitSite(demoObj.dropdownUrl);
+    cy.get("#zcf_address_country")
+    .select("Monaco")
+    .should('have.value',"Monaco")
+})
+
+ it("Dropdown without select tag",function(){
+  demoObj.visitSite(demoObj.dropdownUrl2);
+  cy.get("label[for='billing_country']").scrollIntoView()
+  demoObj.clickElement(demoObj.input_selector);
+  demoObj.Typing(demoObj.inputfield,"Saint Helena" +"{enter}");
+cy.get(demoObj.input_selector).should('have.text',"Saint Helena");
+
+ })
+
+ it("handling Autosuggest Dropdown",function(){
+  demoObj.visitSite(demoObj.wikiUrl);
+  demoObj.Typing(demoObj.winput,"delhi");
+ cy.get(demoObj.element2).contains("Delhi Metro").click()
+ cy.get(demoObj.heading).should('be.visible');
+  
+ })
+
+ it("Handling Dynamic dropdown",function(){
+  demoObj.visitSite(demoObj.google);
+  demoObj.Typing(demoObj.gsearchbar ,"delhi capitals");
+  cy.get(demoObj.dynamicobj).should('have.length',13);
+  cy.get(demoObj.dynamicobj).as('dynamicElements');
+  cy.get('@dynamicElements')
+  .each(($el, index, $list) => {
+    if ($el.text()== 'Delhi Capitals') {
+      cy.wrap($el).click()
+    }
+    cy.wait(3000)
+   cy.get(demoObj.gsearchbar).should("be.visible")
+ })
+
+ })
+
+ it("Handling datepicker in cypress", function(){
+  demoObj.visitSite(demoObj.datepickUrl);
+  cy.frameLoaded(".demo-frame");
+  cy.iframe().find(demoObj.date).type("6/23/2022");
+  //cy.get(".demo-frame").should("contain","2022")
+
+ })
+
 });

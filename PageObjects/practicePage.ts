@@ -2,14 +2,19 @@
 export class practicePage {
     demoUrl= "https://demo.automationtesting.in/Index.html";
     iframeUrl="https://qavbox.github.io/demo/iframes/";
-    google="https://www.google.com";
+    google="https://www.google.com/";
     uploadFileUrl="https://the-internet.herokuapp.com/upload";
     fileUrl="https://davidwalsh.name/demo/multiple-file-upload.php";
     shadowDomUrl="https://www.htmlelements.com/demos/fileupload/shadow-dom/index.htm";
+    dropdownUrl="https://www.zoho.com/commerce/free-demo.html";
+    dropdownUrl2="https://www.dummyticket.com/dummy-ticket-for-visa-application/"
+    wikiUrl="https://www.wikipedia.org/";
+    datepickUrl="https://jqueryui.com/datepicker/";
     gsearchbar=".gLFyf";
-    
-    sec1= "#ui-id-1";
+     sec1= "#ui-id-1";
     email='#email';
+    date="#datepicker";
+    year=".ui-datepicker-title"
     go="#enterimg";
     frame1="#Frame1";
     frame2="#Frame2";
@@ -28,8 +33,15 @@ export class practicePage {
     multiUploads='#filesToUpload';
     multiFileArea='#main > div > p:nth-child(6) > strong';
     shadowFileInput='.smart-browse-input';
-    shadowFileAra=".smart-item-name"
-    
+    shadowFileAra=".smart-item-name";
+    input_selector="#select2-billing_country-container"
+    inputfield=".select2-search__field";
+    element1="label[for='billing_country']";
+    element2=".suggestion-title";
+    winput="#searchInput";
+    heading='#firstHeading';
+    dynamicobj="div.wM6W7d>span";
+    display=".ofy7ae"
 
     visitSite(url: string): void {
         cy.visit(url);

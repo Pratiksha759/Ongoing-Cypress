@@ -1,8 +1,40 @@
 /// 
-
+import 'cypress-iframe';
 import 'cypress-file-upload';
 import { any } from 'cypress/types/bluebird';
 
+
+
+// cypress/support/commands.ts
+
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      hideCommandLog: () => Chainable;
+    }
+  }
+}
+
+Cypress.Commands.add('hideCommandLog', () => {
+  if (Cypress.config('hideCommandLog')) {
+    const app = window.top;
+
+    if (
+      app &&
+      !app.document.head.querySelector('[data-hide-command-log-request]')
+    ) {
+      const style = app.document.createElement('style');
+      style.innerHTML =
+        '.command-name-request, .command-name-xhr { display: none }';
+      style.setAttribute('data-hide-command-log-request', '');
+
+      app.document.head.appendChild(style);
+    }
+  }
+
+  return cy;
+});
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -22,7 +54,6 @@ Cypress.Commands.add("interactWithIframe", (iframeSelector:any, action) => {
   });
   
 
-  /// <reference types="cypress" />
 
 
 
@@ -35,8 +66,9 @@ declare global{namespace Cypress {
 }
 }
 
-  
-  
+
+
+
   
   
 

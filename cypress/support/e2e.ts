@@ -21,5 +21,8 @@ addCompareSnapshotCommand();
 Cypress.on("uncaught:exception",(err,runnables)=>{
     return false;
  })
+
+
+ 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
