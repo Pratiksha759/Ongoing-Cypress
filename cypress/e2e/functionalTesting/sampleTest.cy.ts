@@ -5,16 +5,13 @@ import "cypress-iframe";
 
 import usersData from "../../fixtures/example.json";
 
-
 ///<reference types="cypress-iframe" />
 ///<reference types= "Cypress" />
 const demoObj = new practicePage();
 
-
 beforeEach(() => {
   cy.hideCommandLog();
 });
-
 
 describe("Practice Test Suite", function () {
   it("Handling fixtures in cypress", function () {
@@ -108,78 +105,164 @@ describe("Practice Test Suite", function () {
     cy.get(demoObj.drag).attachFile("shelf-desktop.jpg", {
       subjectType: "drag-n-drop",
     });
-    cy.get(demoObj.dragArea).should(
-      "contain",
-      "shelf"
-    );
+    cy.get(demoObj.dragArea).should("contain", "shelf");
   });
   it("Multiple file uploads", function () {
     demoObj.visitSite(demoObj.uploadFileUrl);
-    cy.get(demoObj.uploadFile).attachFile(["shelf-desktop.jpg", "example.json"]);
+    cy.get(demoObj.uploadFile).attachFile([
+      "shelf-desktop.jpg",
+      "example.json",
+    ]);
     cy.get(demoObj.submitFile).click();
     cy.get(demoObj.fileArea).should("have.text", "File Uploaded!");
   });
 
-
-  it("Multiple file uploads",function(){
+  it("Multiple file uploads", function () {
     demoObj.visitSite(demoObj.fileUrl);
-    cy.get(demoObj.multiUploads).attachFile(["shelf-desktop.jpg", "example.json"]);
-    cy.get(demoObj.multiFileArea).should('have.text',"Files You Selected:")
-  })
-
-  it("File Upload in Shadow Dom",function(){
-    demoObj.visitSite(demoObj.shadowDomUrl);
-    cy.get(demoObj.shadowFileInput,{includeShadowDom:true}).attachFile(["shelf-desktop.jpg", "example.json"]);
-    cy.get(demoObj.shadowFileAra,{includeShadowDom:true}).should('be.visible')
-
+    cy.get(demoObj.multiUploads).attachFile([
+      "shelf-desktop.jpg",
+      "example.json",
+    ]);
+    cy.get(demoObj.multiFileArea).should("have.text", "Files You Selected:");
   });
 
-  it("Handling dropdown in cypress",function(){
+  it("File Upload in Shadow Dom", function () {
+    demoObj.visitSite(demoObj.shadowDomUrl);
+    cy.get(demoObj.shadowFileInput, { includeShadowDom: true }).attachFile([
+      "shelf-desktop.jpg",
+      "example.json",
+    ]);
+    cy.get(demoObj.shadowFileAra, { includeShadowDom: true }).should(
+      "be.visible"
+    );
+  });
+
+  it("Handling dropdown in cypress", function () {
     demoObj.visitSite(demoObj.dropdownUrl);
     cy.get("#zcf_address_country")
-    .select("Monaco")
-    .should('have.value',"Monaco")
-})
+      .select("Monaco")
+      .should("have.value", "Monaco");
+  });
 
- it("Dropdown without select tag",function(){
-  demoObj.visitSite(demoObj.dropdownUrl2);
-  cy.get("label[for='billing_country']").scrollIntoView()
-  demoObj.clickElement(demoObj.input_selector);
-  demoObj.Typing(demoObj.inputfield,"Saint Helena" +"{enter}");
-cy.get(demoObj.input_selector).should('have.text',"Saint Helena");
+  it("Dropdown without select tag", function () {
+    demoObj.visitSite(demoObj.dropdownUrl2);
+    cy.get("label[for='billing_country']").scrollIntoView();
+    demoObj.clickElement(demoObj.input_selector);
+    demoObj.Typing(demoObj.inputfield, "Saint Helena" + "{enter}");
+    cy.get(demoObj.input_selector).should("have.text", "Saint Helena");
+  });
 
- })
+  it("handling Auto suggest Dropdown", function () {
+    demoObj.visitSite(demoObj.wikiUrl);
+    demoObj.Typing(demoObj.winput, "delhi");
+    cy.get(demoObj.element2).contains("Delhi Metro").click();
+    cy.get(demoObj.heading).should("be.visible");
+  });
 
- it("handling Autosuggest Dropdown",function(){
-  demoObj.visitSite(demoObj.wikiUrl);
-  demoObj.Typing(demoObj.winput,"delhi");
- cy.get(demoObj.element2).contains("Delhi Metro").click()
- cy.get(demoObj.heading).should('be.visible');
+  it("Handling Dynamic dropdown", function () {
+    demoObj.visitSite(demoObj.google);
+    demoObj.Typing(demoObj.gsearchbar, "delhi capitals");
+    cy.get(demoObj.dynamicobj).should("have.length", 13);
+    cy.get(demoObj.dynamicobj).as("dynamicElements");
+    cy.get("@dynamicElements").each(($el, index, $list) => {
+      if ($el.text() == "Delhi Capitals") {
+        cy.wrap($el).click();
+      }
+      cy.wait(3000);
+      cy.get(demoObj.gsearchbar).should("be.visible");
+    });
+  });
+
+  it("Handling datepicker in cypress", function () {
+    demoObj.visitSite(demoObj.datepickUrl);
+    cy.frameLoaded(".demo-frame");
+    cy.iframe().find(demoObj.date).type("6/23/2022");
+   });
+});
+
+describe.only("API Queries Suite", function () {
+  beforeEach(() => {
+    demoObj.visitSite(demoObj.orgHrm);
+  });
+
+  it("cy.fixture: Login using fixture", function () {
+    cy.fixture("login.json")
+      .as("details")
+      .then((details) => {
+        demoObj.Typing(demoObj.hrmUser, details.Username);
+        demoObj.Typing(demoObj.hrmPass, details.Password + "{enter}");
+      });
+  });
+
+  it("cy.fixture: Login using fixture", function () {
+    cy.fixture("login.json").then((data) => {
+      cy.get(demoObj.hrmUser).type(data.Username);
+      cy.get(demoObj.hrmPass).type(data.Password + "{enter}");
+    });
+  });
+
+
   
- })
+  it("API Queries", function () {
+    cy.fixture("login.json").then((data) => {
+      cy.get(demoObj.hrmUser).type(data.Username);
+      cy.get(demoObj.hrmPass).type(data.Password + "{enter}");
+      cy.get(demoObj.ul1).children().each(($ele:any)=>{
+        cy.log($ele.text())
+      });
 
- it("Handling Dynamic dropdown",function(){
-  demoObj.visitSite(demoObj.google);
-  demoObj.Typing(demoObj.gsearchbar ,"delhi capitals");
-  cy.get(demoObj.dynamicobj).should('have.length',13);
-  cy.get(demoObj.dynamicobj).as('dynamicElements');
-  cy.get('@dynamicElements')
-  .each(($el, index, $list) => {
-    if ($el.text()== 'Delhi Capitals') {
-      cy.wrap($el).click()
-    }
-    cy.wait(3000)
-   cy.get(demoObj.gsearchbar).should("be.visible")
- })
+      cy.get(demoObj.ul1).next().each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
 
- })
+      cy.get(demoObj.ul1).nextAll().each(($ele1:any)=>{
+        cy.log(`nextAll elements are as follows:   `+ $ele1.text())
+      })
 
- it("Handling datepicker in cypress", function(){
-  demoObj.visitSite(demoObj.datepickUrl);
-  cy.frameLoaded(".demo-frame");
-  cy.iframe().find(demoObj.date).type("6/23/2022");
-  //cy.get(".demo-frame").should("contain","2022")
+      cy.get(demoObj.ul1).closest(demoObj.ul1).each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
+      
+      cy.get(demoObj.ul1).prev( ).each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
+        
+      cy.get(demoObj.ul1).prevAll( ).each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
+      
+      cy.get(demoObj.ul1).first( ).each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
+      
+      cy.get(demoObj.ul1).last( ).each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
 
- })
+      cy.get(demoObj.ul1).parent( ).each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
 
+      cy.get(demoObj.ul1).parents( ).each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
+
+      cy.get(demoObj.ul1).parentsUntil( demoObj.ul1).each(($ele1:any)=>{
+        cy.log($ele1.text())
+      })
+
+      cy.document().its('contentType').should('eq', 'text/html');
+
+      cy.get('div').filter(demoObj.ul1);
+
+      cy.get('div').not(demoObj.ul1);
+
+      cy.get(demoObj.ul1).get('a');
+    
+      cy.get(demoObj.ul1).find('a');
+
+    });
+  });
+
+  
 });

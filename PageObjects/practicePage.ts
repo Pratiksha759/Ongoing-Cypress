@@ -10,6 +10,7 @@ export class practicePage {
     dropdownUrl2="https://www.dummyticket.com/dummy-ticket-for-visa-application/"
     wikiUrl="https://www.wikipedia.org/";
     datepickUrl="https://jqueryui.com/datepicker/";
+    orgHrm="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
     gsearchbar=".gLFyf";
      sec1= "#ui-id-1";
     email='#email';
@@ -41,7 +42,11 @@ export class practicePage {
     winput="#searchInput";
     heading='#firstHeading';
     dynamicobj="div.wM6W7d>span";
-    display=".ofy7ae"
+    display=".ofy7ae";
+    hrmUser="input[placeholder='Username']";
+    hrmPass="input[placeholder='Password']";
+    ul1=".oxd-main-menu";
+    dashboard='.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module'
 
     visitSite(url: string): void {
         cy.visit(url);
