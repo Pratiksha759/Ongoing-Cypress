@@ -46,7 +46,9 @@ export class practicePage {
     hrmUser="input[placeholder='Username']";
     hrmPass="input[placeholder='Password']";
     ul1=".oxd-main-menu";
-    dashboard='.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module'
+    dashboard='.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module';
+    element3="#zcf_address_country";
+    element4= "label[for='billing_country']"
 
     visitSite(url: string): void {
         cy.visit(url);

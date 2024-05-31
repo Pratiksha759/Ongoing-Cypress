@@ -139,14 +139,14 @@ describe("Practice Test Suite", function () {
 
   it("Handling dropdown in cypress", function () {
     demoObj.visitSite(demoObj.dropdownUrl);
-    cy.get("#zcf_address_country")
+    cy.get(demoObj.element3)
       .select("Monaco")
       .should("have.value", "Monaco");
   });
 
   it("Dropdown without select tag", function () {
     demoObj.visitSite(demoObj.dropdownUrl2);
-    cy.get("label[for='billing_country']").scrollIntoView();
+    cy.get(demoObj.element4).scrollIntoView();
     demoObj.clickElement(demoObj.input_selector);
     demoObj.Typing(demoObj.inputfield, "Saint Helena" + "{enter}");
     cy.get(demoObj.input_selector).should("have.text", "Saint Helena");
@@ -260,7 +260,8 @@ describe.only("API Queries Suite", function () {
       cy.get(demoObj.ul1).get('a');
     
       cy.get(demoObj.ul1).find('a');
-
+       
+      
     });
   });
 
