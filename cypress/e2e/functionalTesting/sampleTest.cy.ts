@@ -139,9 +139,7 @@ describe("Practice Test Suite", function () {
 
   it("Handling dropdown in cypress", function () {
     demoObj.visitSite(demoObj.dropdownUrl);
-    cy.get(demoObj.element3)
-      .select("Monaco")
-      .should("have.value", "Monaco");
+    cy.get(demoObj.element3).select("Monaco").should("have.value", "Monaco");
   });
 
   it("Dropdown without select tag", function () {
@@ -177,7 +175,7 @@ describe("Practice Test Suite", function () {
     demoObj.visitSite(demoObj.datepickUrl);
     cy.frameLoaded(".demo-frame");
     cy.iframe().find(demoObj.date).type("6/23/2022");
-   });
+  });
 });
 
 describe.only("API Queries Suite", function () {
@@ -201,69 +199,85 @@ describe.only("API Queries Suite", function () {
     });
   });
 
-
-  
   it("API Queries", function () {
     cy.fixture("login.json").then((data) => {
       cy.get(demoObj.hrmUser).type(data.Username);
       cy.get(demoObj.hrmPass).type(data.Password + "{enter}");
-      cy.get(demoObj.ul1).children().each(($ele:any)=>{
-        cy.log($ele.text())
-      });
+      cy.get(demoObj.ul1)
+        .children()
+        .each(($ele: any) => {
+          cy.log($ele.text());
+        });
 
-      cy.get(demoObj.ul1).next().each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
+      cy.get(demoObj.ul1)
+        .next()
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
 
-      cy.get(demoObj.ul1).nextAll().each(($ele1:any)=>{
-        cy.log(`nextAll elements are as follows:   `+ $ele1.text())
-      })
+      cy.get(demoObj.ul1)
+        .nextAll()
+        .each(($ele1: any) => {
+          cy.log(`nextAll elements are as follows:   ` + $ele1.text());
+        });
 
-      cy.get(demoObj.ul1).closest(demoObj.ul1).each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
-      
-      cy.get(demoObj.ul1).prev( ).each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
-        
-      cy.get(demoObj.ul1).prevAll( ).each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
-      
-      cy.get(demoObj.ul1).first( ).each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
-      
-      cy.get(demoObj.ul1).last( ).each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
+      cy.get(demoObj.ul1)
+        .closest(demoObj.ul1)
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
 
-      cy.get(demoObj.ul1).parent( ).each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
+      cy.get(demoObj.ul1)
+        .prev()
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
 
-      cy.get(demoObj.ul1).parents( ).each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
+      cy.get(demoObj.ul1)
+        .prevAll()
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
 
-      cy.get(demoObj.ul1).parentsUntil( demoObj.ul1).each(($ele1:any)=>{
-        cy.log($ele1.text())
-      })
+      cy.get(demoObj.ul1)
+        .first()
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
 
-      cy.document().its('contentType').should('eq', 'text/html');
+      cy.get(demoObj.ul1)
+        .last()
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
 
-      cy.get('div').filter(demoObj.ul1);
+      cy.get(demoObj.ul1)
+        .parent()
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
 
-      cy.get('div').not(demoObj.ul1);
+      cy.get(demoObj.ul1)
+        .parents()
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
 
-      cy.get(demoObj.ul1).get('a');
-    
-      cy.get(demoObj.ul1).find('a');
-       
-      
+      cy.get(demoObj.ul1)
+        .parentsUntil(demoObj.ul1)
+        .each(($ele1: any) => {
+          cy.log($ele1.text());
+        });
+
+      cy.document().its("contentType").should("eq", "text/html");
+
+      cy.get("div").filter(demoObj.ul1);
+
+      cy.get("div").not(demoObj.ul1);
+
+      cy.get(demoObj.ul1).get("a");
+
+      cy.get(demoObj.ul1).find("a");
     });
   });
-
-  
 });
