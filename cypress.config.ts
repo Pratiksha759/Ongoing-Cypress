@@ -54,24 +54,24 @@ export default defineConfig({
         },
       });
 
-      //   const testenv: string = process.env.TEST_ENV || config.env.testenv || '';
+        const testenv: string = process.env.TEST_ENV || config.env.testenv || '';
 
-      //   function generateBaseURL(testenv: string): string {
-      //     let baseUrl = '';
+        function generateBaseURL(testenv: string): string {
+          let baseUrl = '';
 
-      //     //  if (testenv !== 'localhost') {
-      //     //   //baseUrl = `http://testphp.vulnweb.com${testenv}`;
-      //     //   baseUrl = `http://${testenv}testphp.vulnweb.com`;
-      //     // }
-      //     return baseUrl;
-      //   }
+           if (testenv !== 'localhost') {
+            //baseUrl = `http://testphp.vulnweb.com${testenv}`;
+            baseUrl = `http://${testenv}testphp.vulnweb.com`;
+          }
+          return baseUrl;
+        }
 
-      //   config.baseUrl= generateBaseURL(testenv);
+        config.baseUrl= generateBaseURL(testenv);
 
-      //   return config;
+        return config;
     },
 
-    baseUrl: "http://testphp.vulnweb.com",
+  //  baseUrl: "http://testphp.vulnweb.com",
   },
   //  env: {}
 });
