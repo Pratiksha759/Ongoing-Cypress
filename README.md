@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## **Project title:**
  Webpage Automation Testing
 Built on Cypress IDE using Typescript
@@ -275,3 +276,6 @@ This file is used to store any configuration specific to Cypress.
 
 ## **Licence**
 MIT © Richard Littaue
+=======
+# CypressProject..edited
+>>>>>>> b7ce81d4336f8e82197b6de6672bfa754901cd73
