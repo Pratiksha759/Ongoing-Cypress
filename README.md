@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 Project title:
 Webpage Automation Testing Built on Cypress IDE using Typescript
 
