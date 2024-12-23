@@ -9,7 +9,6 @@ export class authenticationPage {
     url1 = 'https://authenticationtest.com/complexAuth/';
     linkSelector1 = 'a[href="https://authenticationtest.com/complexAuth/"]';
 
-
     complexUrl(){
         cy.visit('https://authenticationtest.com/complexAuth/');
         }
