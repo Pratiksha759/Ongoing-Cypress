@@ -200,11 +200,10 @@ that your project will always use the same versions. regardless of when you inst
 👨‍💻Team Member:
 -Pratiksha Pathare - pratikshap@testrig.co.in 📧
 
-👨‍🏫Team lead
--Vaibhav Pawar
 
 Contributors
 -Feel free to dive in! Open an issue or submit PRs.
 
 Licence
 MIT © Richard Littaue
+
